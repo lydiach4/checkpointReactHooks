@@ -5,7 +5,8 @@ function AddMovie({ onAddMovie }) {
     title: '',
     description: '',
     posterURL: '',
-    rating: 0
+    rating: 0 ,
+    trailerLink : ''
   });
 
   const handleChange = (e) => {
@@ -19,7 +20,7 @@ function AddMovie({ onAddMovie }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddMovie(newMovie);
-    setNewMovie({ title: '', description: '', posterURL: '', rating: 0 });  // Clear form
+    setNewMovie({ title: '', description: '', posterURL: '', rating: 0 , trailerLink :'' });  // Clear form
   };
 
   return (
@@ -60,6 +61,15 @@ function AddMovie({ onAddMovie }) {
         onChange={handleChange} 
         required
         className='border border-black p-4 m-2 ' 
+      />
+       <input 
+        type="text" 
+        name="trailerLink" 
+        value={newMovie.trailerLink} 
+        placeholder="Trailer Link" 
+        onChange={handleChange} 
+        required 
+        className='border border-black p-4 m-2 '
       />
       <button className='bg-black p-4 m-2 text-white' type="submit">Add Movie</button>
     </form>

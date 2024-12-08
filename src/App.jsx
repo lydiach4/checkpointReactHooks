@@ -3,6 +3,7 @@ import MovieList from './MovieList';
 import Filter from './Filter';
 import AddMovie from './AddMovie';
 import Movies from './Movies.json'
+
 function App() {
   const [movies, setMovies] = useState(Movies);
   const [filteredMovies, setFilteredMovies] = useState(movies);
@@ -32,9 +33,10 @@ function App() {
   return (
     <div className=" m-4 text-center ">
       <h1 className='text-6xl font-semibold m-7'>My Movie App</h1>
-      <AddMovie onAddMovie={handleAddMovie} />
-      <MovieList movies={filteredMovies} />
       <Filter onFilter={handleFilter} />
+      <MovieList movies={filteredMovies} />
+      <AddMovie onAddMovie={handleAddMovie} />
+     
     </div>
   );
 }
