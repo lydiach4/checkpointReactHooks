@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 function Filter({ onFilter }) {
+  
   const [title, setTitle] = useState('');
   const [rating, setRating] = useState('');
 
